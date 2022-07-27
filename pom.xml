@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.kanalis.channels</groupId>
+  <artifactId>kanalis-channels-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>${revision}</version>
+
+  <organization>
+    <name>Kanalis</name>
+    <url>https://kanalis.io</url>
+  </organization>
+
+  <parent>
+    <groupId>io.humainary</groupId>
+    <artifactId>humainary-modules-spi-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <properties>
+    <revision>1.0-alpha9-SNAPSHOT</revision>
+  </properties>
+
+  <modules>
+    <module>spi</module>
+  </modules>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>io.humainary.channels</groupId>
+      <artifactId>humainary-channels-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.humainary.substrates</groupId>
+      <artifactId>humainary-substrates-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <profiles>
+
+    <profile>
+      <id>github</id>
+
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <distributionManagement>
+        <repository>
+          <id>github</id>
+          <name>GitHub Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/kanalis-io/kanalis-channels-java</url>
+        </repository>
+      </distributionManagement>
+
+    </profile>
+
+  </profiles>
+
+</project>
